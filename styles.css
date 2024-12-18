@@ -1,0 +1,727 @@
+@import url('https://fonts.googleapis.com/css2?family=Gupter:wght@400;500;700&family=League+Spartan:wght@100..900&display=swap');
+
+/* Website Content */
+body {
+    background-image: url('images/Sprinkle.svg');
+    font-family: "Gupter", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(10 60 202);
+    color: #fffffff3; /* White text */
+}
+
+/* Make scrollbar transparent */
+body::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent; /* Transparent background */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: transparent; /* Transparent thumb */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+header {
+    padding: 2px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url('images/Sprinkle.svg');
+    z-index: 100;
+}
+
+header .container h1 {
+    margin: 0;
+    font-size: 3rem; /* Larger font size */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    font-size: 1.3rem;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* New styles for the navigation */
+nav ul li a {
+    color: #fffffff3;
+    text-decoration: none;
+    padding: 10px; /* Add padding for better clickability */
+    position: relative; /* Positioning context for the pseudo-element */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fffffff3;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+hr {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #fffffff3; /* White border */
+}
+
+.section {
+    padding: 20px 0;
+}
+
+.section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #CB5C13; /* Orange heading */
+}
+
+.section h5 {
+    color: #fffffff3; /* Light gray subheading */
+}
+
+.artist-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Add margin to create space below the artist info */
+    margin-top: 150px;
+}
+
+.artist-photo {
+    flex: 0 0 30%; /* Adjust the width of the photo */
+    margin-top: -50px; /* Move the artist photo up */
+}
+
+.artist-bio {
+    flex: 0 0 70%;
+    padding-left: 20px;
+}
+
+.welcome {
+    font-size: 4.7rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: -100px;
+}
+
+.welcome p {
+    margin-bottom: 0; 
+}
+
+.welcome .btn {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 15px 70px;
+    margin: 0 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    text-decoration: none;
+}
+
+.welcome .btn:hover {
+    background-color: #ffffffaa;
+}
+
+.welcome .btn img {
+    width: 40px; /* Adjust the width of the image */
+    height: 40px; /* Adjust the height of the image */
+    margin-right: 5px; /* Optional: Add some spacing between the image and text */
+}
+
+.intro {
+    font-size: 1.4em;
+    margin-top: 0;
+}
+
+.music-profiles.desktop-view img {
+    width: 35px;
+    height: 35px;
+    padding-inline: 25px;
+}
+
+.music-profiles.desktop-view a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.music-profiles.desktop-view a:hover {
+    transform: scale(1.2);
+}
+
+/* For mobile view */
+.music-profiles.mobile-view {
+    display: none; /* Hide by default */
+}
+
+
+.more-artist-info {
+    font-size: 1.35rem;
+}
+
+.music {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.music p {
+    font-size: 1.35rem;
+}
+
+.music h2 {
+    font-size: 2rem;
+}
+
+.music-item {
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s ease;
+    border: 1px solid #e6e7e6;
+    background-image: url('images/Sprinkle.svg');
+    background-size: cover; /* Ensures the image covers the entire card */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.music-item:hover {
+    transform: scale(1.01);
+}
+
+.music-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.music-item h3,
+.music-item h5 {
+    margin: 5px 0;
+    color: #fff;
+}
+
+.music-item audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#videos {
+    padding: 40px 0;
+}
+
+.videos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-gap: 20px;
+}
+
+.videos p {
+    font-size: 1.35rem;
+}
+
+.videos h2 {
+    font-size: 2rem;
+}
+
+.video-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background-image: url('images/Sprinkle.svg');
+    background-size: cover; /* Ensures the image covers the entire card */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border: 1px solid #e6e7e6;
+    border-radius: 10px;
+    text-align: center;
+    height: auto; /* Remove fixed height */
+    margin-bottom: 20px; /* Add margin between rows */
+    transition: 0.3s ease;
+}
+
+.video-item:hover {
+    transform: scale(1.01);
+}
+
+.video-item iframe {
+    width: 100%;
+    max-height: 100%; 
+    padding-bottom: 5%;
+}
+
+.video-item h3,
+.video-item p {
+    margin: 5px 0;
+    color: #fff;
+}
+
+.MVP {
+    font-size: 1.35rem;
+}
+
+.contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact p {
+    font-size: 1.35rem;
+}
+
+.contact h2 {
+    font-size: 2rem;
+}
+
+.social-icons img {
+    width: 38px;
+    height: 38px;
+    padding-inline: 5px;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+footer {
+    background: transparent;
+    color: #fffffff3; 
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+/* Define keyframes for smooth slide-in animations */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply smoother animations to specific elements */
+header {
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.intro {
+    animation: fadeIn 1s ease-out;
+}
+
+.artist-photo {
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.artist-bio {
+    animation: slideInFromRight 1s ease-out;
+}
+
+.music {
+    animation: slideInFromBottom 1s ease-out;
+}
+
+#videos {
+    animation: slideInFromRight 1s ease-out;
+}
+
+/* Adjusting transitions for smoother effects */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px); /* Slide in from the bottom */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Adjust timing as needed */
+}
+
+.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Add styles for the menu toggle button */
+.menu-toggle {
+    display: none; /* Hide the button by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative; /* Add position relative */
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fffffff3;;
+    margin: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate spans to form an X icon when menu is open */
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Media query for screens smaller than 768px (typical mobile phones) */
+
+@media only screen and (max-width: 768px) {
+    /* Add this rule to shift the text to the left edge */
+    header .container h1 {
+        margin-right: auto; /* Pushes the text to the left */
+        font-size: 1.8rem; /* Adjust the font size as needed */
+    }
+
+    /* Add this rule to shift the menu icon to the right edge */
+    .menu-toggle {
+        margin-left: auto; /* Pushes the menu icon to the right */
+        margin-right: -20px; /* Add margin to the right to move it further */
+    }
+
+    /* Show the menu toggle button */
+    .menu-toggle {
+        display: block;
+    }
+
+  
+    /* Hide the navigation links by default */
+    nav ul {
+        position: fixed; /* Fix the position of the menu */
+        top: 70px;
+        right: -100%; /* Hide menu off-screen initially */
+        background-image: url('images/Sprinkle.svg');
+        width: 50%;
+        height: 40vh; /* Height */
+        padding-top: 20px; /* Adjust padding to fit header */
+        text-align: center;
+        transition: right 0.3s ease; /* Smooth slide-in effect */
+        list-style: none; /* Remove default list styling */
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: flex-start; /* Center items vertically */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Vertical spacing between items */
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        display: block; /* Ensure links are block elements for padding */
+        padding: 10px; /* Add padding for better clickability */
+    }
+
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%; /* Position the left edge in the middle of the text */
+        transform: translateX(-50%); /* Center the underline */
+        width: 0;
+        height: 2px;
+        background-color: #fffffff3;
+        transition: width 0.3s ease;
+    }
+    
+    nav ul li a:hover::after {
+        width: 70%;
+    }
+
+    /* Show navigation links when menu is open */
+    .menu-toggle.open + nav ul {
+        right: 0; /* Slide in from the right */
+    }
+
+    .header-content {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .section {
+        padding: 20px 0;
+    }
+
+    .artist-info {
+        margin-top: 170px;
+    }
+
+    .artist-photo img {
+        width: 100px;
+        height: 200px;
+        margin-top: -50px;
+    }
+    
+    /* Reduce welcome text font size */
+    .welcome p {
+        font-size: 1rem; /* Adjust the font size as needed */
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    
+    /* Reduce button sizes */
+    .welcome .btn {
+        padding: 2px 4px; /* Adjust padding for buttons */
+        font-size: 15px; /* Adjust font size for buttons */
+    }
+    
+    .welcome .btn-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Reduce intro font size */
+    .intro {
+        font-size: 0.65rem; /* Adjust the font size as needed */
+        margin-top: 5px;
+    }
+    
+    .music-profiles.desktop-view {
+        display: none; /* Hide in mobile view */
+    }
+
+    .music-profiles.mobile-view {
+        display: flex;
+        justify-content: center; /* Align items horizontally */
+        margin-top: -10px; /* Adjust margin as needed */
+        margin-bottom: -10px;
+    }
+
+    /* Music profiles image sizes */
+    .music-profiles.mobile-view img {
+        width: 30px; /* Adjust width of music profile images */
+        height: 30px; /* Adjust height of music profile images */
+        padding-inline: 8px;
+    }
+
+    .music-profiles.mobile-view a {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+    
+    .music-profiles.mobile-view a:hover {
+        transform: scale(1.2);
+    }
+
+    .more-artist-info {
+        font-size: 1rem; /* Decrease font size for additional artist info */
+    }
+
+    .music {
+        grid-template-columns: repeat(1, 1fr); /* Two columns for music items */
+    }
+    .music-item:hover {
+        transform: none;
+    }
+    .music-item:hover img{
+        transform: scale(1.01);
+    }
+
+    .music-item img {
+        width: 100%; /* Make music item images full width */
+    }
+
+    .music-item h3,
+    .music-item h5 {
+        font-size: 1rem; /* Decrease font size for music item titles */
+    }
+
+    .music-item audio {
+        width: 100%; /* Reduce width of audio player */
+    }
+
+    .videos {
+        grid-template-columns: repeat(1, 1fr); /* Single column for video items */
+    }
+
+    .video-item iframe {
+        max-width: 100%; /* Make video iframes responsive */
+        height: auto; /* Allow height to adjust accordingly */
+    }
+
+    .video-item h3 {
+        font-size: 1rem; /* Decrease font size for video titles */
+    }
+
+    .social-icons img {
+        width: 30px; /* Decrease size of social icons */
+        height: 30px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .artist-photo {
+        margin-right: -10px; /* Reduce right margin */
+        margin-left: -10px; /* Reduce left margin */
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .artist-photo {
+        margin-right: -15px; /* Reduce right margin */
+        margin-left: -15px; /* Reduce left margin */
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .artist-photo {
+        margin-right: -20px; /* Reduce right margin */
+        margin-left: -20px; /* Reduce left margin */
+    }
+    .welcome p {
+        font-size: 1rem; /* Adjust the font size as needed */
+        margin-bottom: 5px;
+    }
+    
+    /* Reduce button sizes */
+    .welcome .btn {
+        padding: 2px 4px; /* Adjust padding for buttons */
+        font-size: 12px; /* Adjust font size for buttons */
+    }
+    
+    .artist-bio {
+        margin-left: 10px;
+        margin-right: 10px; 
+    }
+
+    /* Music profiles image sizes */
+    .music-profiles.mobile-view img {
+        width: 20px; /* Adjust width of music profile images */
+        height: 20px; /* Adjust height of music profile images */
+        padding-inline: 8px;
+    }
+}
+
+/*HEADER FONT SIZINHE FOR DIFFERENT SCREENS*/
+/* Font size for screens 768px and below */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px; /* Adjust the size as needed */
+    }
+    header .container h1 {
+        margin-right: auto; /* Pushes the text to the left */
+        font-size: 1.8rem; /* Adjust the font size as needed */
+    }
+}
+
+/* Font size for screens 365px and below */
+@media (max-width: 365px) {
+    header .container h1 {
+        font-size: 1.7rem /* Adjust the size as needed */
+    }
+}
+
+/* Font size for screens 325px and below */
+@media (max-width: 325px) {
+    header .container h1 {
+        font-size: 1.5rem; /* Adjust the size as needed */
+    }
+}
+
+
+/*Other Animations*/
+/* Animation Styles */
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.animate.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Adjust CSS to trigger animation when element is visible */
+.animate-visible {
+    animation: scaleIn 0.5s forwards;
+}
